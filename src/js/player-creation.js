@@ -1,17 +1,10 @@
-
-// playercharacter parent object
-// properties: archetype (child object) whatever archetype chosen gives base stats
-// property: stat bonuses (from gear, level up, talents, whatever)
-// 
-
-// attach to playercharacter object
 export class PlayerCreation {
   constructor(name, archetype) {
     this.playerName = name;
     this.archetype = archetype;
     this.baseStats = [];
   }
-
+  // baseStats [focus, dexterity, vitality, intelligence, intimidation factor]
   assignBaseStats(archetype) {
     if (archetype === "Goliath") {
       this.baseStats = [3, 5, 7, 3, 10];
@@ -19,53 +12,8 @@ export class PlayerCreation {
       this.baseStats = [7, 10, 5, 3, 3];
     } else if (archetype === "Mystic") {
       this.baseStats = [5, 3, 3, 10, 7];
-    } else if (archetype === "Brainiac") {
-      this.baseStats = [5, 5, 3, 7, 10];
     } else {
-      this.baseStats = [0, 0, 0, 0, 0];
-    }
+      this.baseStats = [5, 5, 3, 7, 10];
+    } 
   }
 }
-
-
-
-// generate an architype
-// generate all arcetypes
-// stat bonuses
-
-// 4 monster archetypes
-//generate stat number
-    //low -3
-    //medium - 5
-    //high - 7
-    //expert - 10
-  //stats
-    // focus
-    // intelligence
-    // dexterity
-    // vitality
-    // intimidation factor
-  // fighter: slasher
-    // focus - high
-    // dexterity - expert
-    // vitality - medium
-    // intelligence - low
-    // intimidation factor low
-  // tanky: goliath
-    // focus - low
-    // dexterity - medium
-    // vitality - expert
-    // intelligence - low
-    // intimidation factor - high
-  // magic  - mystic
-    // focus - medium
-    // dexterity - low
-    // vitality - low
-    // intelligence - expert
-    // intimidation factor - high
-  // technological - Brainiac
-    // focus - medium
-    // dexterity - medium
-    // vitality - low
-    // intelligence - high
-    // intimidation factor - expert
