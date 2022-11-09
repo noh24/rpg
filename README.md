@@ -1,13 +1,14 @@
-# Project Name
-By Brian Noh  
-Epicodus Independent Project: 
-_Currently not deployed_: [Check out the project here](deployed.github.com)
+# RPG Project
+By Brian Noh and Alex Johnson
+Epicodus 2-Day Project: 
+_Currently not deployed_: [Check out the project here](noh24.github.io/rpg/)
 
 ## Technologies Used  
 * HTML
 * CSS
 * JavaScript
 * Node.js
+* Jest
 * Web API
 
 ## Description
@@ -18,14 +19,14 @@ _Currently not deployed_: [Check out the project here](deployed.github.com)
 * Open Terminal and enter:  
   ```
   $ cd Desktop
-  $ git clone file_url
-  $ cd file-name
+  $ git clone https://github.com/noh24/rpg.git
+  $ cd rpg
   $ npm install
   $ npm run start
   ```
 __Or__   
 * Clone repository in Desktop through Terminal
-* Change current directory to root directory of file-name
+* Change current directory to root directory of rpg
 * Enter in Terminal:  
   ```
   $ npm install
