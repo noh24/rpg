@@ -24,7 +24,7 @@ describe('playerCreation', () => {
     let archetype = "Goliath";
     let player = new PlayerCreation(archetype);
     player.initializeCharacter(archetype);
-    expect(player.baseStats).toEqual([3, 5, 7, 3, 10]);
+    expect(player.baseStats).toEqual([3, 5, 10, 3, 7]);
     expect(player.inventory).toEqual(["brass knuckles"]);
   });
   
@@ -51,5 +51,16 @@ describe('playerCreation', () => {
     expect(player.baseStats).toEqual([5, 5, 3, 7, 10]);
     expect(player.inventory).toEqual(["glock"]);
   });
+  
+  test('should add item to player\'s inventory ', () => {
+    let archetype = "Brainiac";
+    let item = "chest-equipment"
+    let player = new PlayerCreation(archetype);
+    player.initializeCharacter(archetype);
+    player.addToInventory(item);
+    expect(player.inventory).toEqual(["glock", "chest-equipment"]);
+  });
+
+  
 });
 
