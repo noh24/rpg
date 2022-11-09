@@ -20,32 +20,36 @@ describe('playerCreation', () => {
     expect(player.inventory).toEqual([]);
   });
 
-  test('monster base stats are assigned based on their choice of "goliath"', () => {
+  test('starting base stats and item are assigned based on their choice of "goliath"', () => {
     let archetype = "Goliath";
     let player = new PlayerCreation(archetype);
-    player.assignBaseStats(archetype);
+    player.initializeCharacter(archetype);
     expect(player.baseStats).toEqual([3, 5, 7, 3, 10]);
+    expect(player.inventory).toEqual(["brass knuckles"]);
   });
   
-  test('monster base stats are assigned based on their choice of "slasher"', () => {
+  test('starting base stats and item are assigned based on their choice of "Slasher"', () => {
     let archetype = "Slasher";
     let player = new PlayerCreation(archetype);
-    player.assignBaseStats(archetype);
+    player.initializeCharacter(archetype);
     expect(player.baseStats).toEqual([7, 10, 5, 3, 3]);
+    expect(player.inventory).toEqual(["chef knives"]);
   });
-
-  test('monster base stats are assigned based on their choice of "mystic"', () => {
+  
+  test('starting base stats and item are assigned based on their choice of "Mystic"', () => {
     let archetype = "Mystic";
     let player = new PlayerCreation(archetype);
-    player.assignBaseStats(archetype);
+    player.initializeCharacter(archetype);
     expect(player.baseStats).toEqual([5, 3, 3, 10, 7]);
+    expect(player.inventory).toEqual(["orb"]);
   });
-
-  test('monster base stats are assigned based on their choice of "brainiac"', () => {
+  
+  test('starting base stats and item are assigned based on their choice of "Brainiac"', () => {
     let archetype = "Brainiac";
     let player = new PlayerCreation(archetype);
-    player.assignBaseStats(archetype);
+    player.initializeCharacter(archetype);
     expect(player.baseStats).toEqual([5, 5, 3, 7, 10]);
+    expect(player.inventory).toEqual(["glock"]);
   });
 });
 
