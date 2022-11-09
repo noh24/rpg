@@ -8,7 +8,7 @@ export class PlayerCreation {
   // baseStats [focus, dexterity, vitality, intelligence, intimidation factor]
   initializeCharacter(archetype) { 
     if (archetype === "Goliath") {
-      this.baseStats = [3, 5, 7, 3, 10];
+      this.baseStats = [3, 5, 10, 3, 7];
       this.inventory = ["brass knuckles"];
     } else if (archetype === "Slasher") {
       this.baseStats = [7, 10, 5, 3, 3];
@@ -20,6 +20,10 @@ export class PlayerCreation {
       this.baseStats = [5, 5, 3, 7, 10];
       this.inventory = ["glock"];
     } 
+  }
+  
+  addToInventory(item) {
+    this.inventory.push(item);
   }
 }
 
