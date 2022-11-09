@@ -6,13 +6,20 @@
 
 // attach to playercharacter object
 export class PlayerCreation {
-  constructor(name, archetype, baseStats) {
+  constructor(name, archetype) {
     this.playerName = name;
     this.archetype = archetype;
-    this.baseStats = baseStats;
+    this.baseStats = [];
+  }
+
+  assignBaseStats(archetype) {
+    if (archetype === "Goliath") {
+      this.baseStats = [3, 5, 7, 3, 10];
+    } else {
+      this.baseStats = [0, 0, 0, 0, 0];
+    }
   }
 }
-
 
 
 
@@ -44,16 +51,13 @@ export class PlayerCreation {
     // vitality - expert
     // intelligence - low
     // intimidation factor - high
-  // magic
-      // mind-control
-      // stealth-magic
-      // destruction
+  // magic  - necromancer
     // focus - medium
     // dexterity - low
     // vitality - low
     // intelligence - expert
     // intimidation factor - high
-  // technological
+  // technological - Einstein
     // focus - medium
     // dexterity - medium
     // vitality - low
