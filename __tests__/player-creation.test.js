@@ -21,57 +21,30 @@ describe('playerCreation', () => {
 
   test('monster base stats are assigned based on their choice of "goliath"', () => {
     let archetype = "Goliath";
-    let archetype2 = "Human";
     let player = new PlayerCreation(archetype);
-    let player2 = new PlayerCreation(archetype2);
     player.assignBaseStats(archetype);
-    player2.assignBaseStats(archetype2);
     expect(player.baseStats).toEqual([3, 5, 7, 3, 10]);
-    expect(player2.baseStats).toEqual([0, 0, 0, 0, 0]);
   });
   
   test('monster base stats are assigned based on their choice of "slasher"', () => {
     let archetype = "Slasher";
-    let archetype2 = "Human";
     let player = new PlayerCreation(archetype);
-    let player2 = new PlayerCreation(archetype2);
     player.assignBaseStats(archetype);
-    player2.assignBaseStats(archetype2);
     expect(player.baseStats).toEqual([7, 10, 5, 3, 3]);
-    expect(player2.baseStats).toEqual([0, 0, 0, 0, 0]);
   });
 
   test('monster base stats are assigned based on their choice of "mystic"', () => {
     let archetype = "Mystic";
-    let archetype2 = "Human";
     let player = new PlayerCreation(archetype);
-    let player2 = new PlayerCreation(archetype2);
     player.assignBaseStats(archetype);
-    player2.assignBaseStats(archetype2);
     expect(player.baseStats).toEqual([5, 3, 3, 10, 7]);
-    expect(player2.baseStats).toEqual([0, 0, 0, 0, 0]);
   });
 
-  test('monster base stats are assigned based on their choice of "Brainiac"', () => {
+  test('monster base stats are assigned based on their choice of "brainiac"', () => {
     let archetype = "Brainiac";
-    let archetype2 = "Human";
     let player = new PlayerCreation(archetype);
-    let player2 = new PlayerCreation(archetype2);
     player.assignBaseStats(archetype);
-    player2.assignBaseStats(archetype2);
     expect(player.baseStats).toEqual([5, 5, 3, 7, 10]);
-    expect(player2.baseStats).toEqual([0, 0, 0, 0, 0]);
   });
-
-
-//reference:
-//lo 3, med 5, hi 7, exp, 10
-// tanky: goliath
-// [0]focus - low
-// [1]dexterity - medium
-// [2]vitality - expert
-// [3]intelligence - low
-// [4]intimidation factor - high
-  
 });
 
