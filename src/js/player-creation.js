@@ -19,6 +19,8 @@ export class PlayerCreation {
       this.baseStats = [7, 10, 5, 3, 3];
     } else if (archetype === "Mystic") {
       this.baseStats = [5, 3, 3, 10, 7];
+    } else if (archetype === "Brainiac") {
+      this.baseStats = [5, 5, 3, 7, 10];
     } else {
       this.baseStats = [0, 0, 0, 0, 0];
     }
@@ -55,13 +57,13 @@ export class PlayerCreation {
     // vitality - expert
     // intelligence - low
     // intimidation factor - high
-  // magic  - necromancer
+  // magic  - mystic
     // focus - medium
     // dexterity - low
     // vitality - low
     // intelligence - expert
     // intimidation factor - high
-  // technological - Einstein
+  // technological - Brainiac
     // focus - medium
     // dexterity - medium
     // vitality - low
