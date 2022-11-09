@@ -19,7 +19,7 @@ describe('playerCreation', () => {
     expect(player.baseStats).toEqual([]);
   });
 
-  test('monster base stats are assigned based on their archetype choice', () => {
+  test('monster base stats are assigned based on their choice of "goliath"', () => {
     let archetype = "Goliath";
     let archetype2 = "Human";
     let player = new PlayerCreation(archetype);
