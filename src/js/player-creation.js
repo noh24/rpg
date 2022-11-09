@@ -3,9 +3,10 @@ export class PlayerCreation {
     this.playerName = name;
     this.archetype = archetype;
     this.baseStats = [];
+    this.inventory = [];
   }
   // baseStats [focus, dexterity, vitality, intelligence, intimidation factor]
-  assignBaseStats(archetype) {
+  assignBaseStats(archetype) { //PlayerCreation.assignbasestats()
     if (archetype === "Goliath") {
       this.baseStats = [3, 5, 7, 3, 10];
     } else if (archetype === "Slasher") {
@@ -17,3 +18,5 @@ export class PlayerCreation {
     } 
   }
 }
+
+
