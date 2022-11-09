@@ -1,4 +1,5 @@
 import PlayerCreation from './../src/js/player-creation';
+import { Weapon } from './../src/js/inventory';
 
 describe('playerCreation', () => {
 
@@ -39,5 +40,34 @@ describe('playerCreation', () => {
     player.initializeCharacter(archetype);
     expect(player.baseStats).toEqual([5, 5, 3, 7, 10]);
   });
-});
-
+  
+  test('should add item to player\'s inventory ', () => {
+    let archetype = "Brainiac";
+    let glock = new Weapon('glock', 1000, "intimidation-factor", 2);
+    let player = new PlayerCreation(archetype);
+    player.addToInventory(glock);
+    expect(player.inventory).toEqual([glock]);
+    console.log('glock should be an object', glock)
+  });     
+  
+  test('prevent adding to inventory that holds more than 5 items', () => {
+    let archetype = "Brainiac";
+    let player = new PlayerCreation(archetype);
+    let player2 = new PlayerCreation(archetype);
+    player.inventory = ["one", "two", "three", "four", ];
+    player2.inventory = ["one", "two", "three", "four", "five"]
+    let item = new Weapon('glock', 1000, "intimidation-factor", 2);
+    player.addToInventory(item);
+    expect(player.inventory).toEqual(["one", "two", "three", "four", item]);
+    expect(player2.addToInventory(item)).toEqual("too much stuff");
+  });
+}); 
+  
+  //   test('will remove specified item from inventory', () => {
+  //     let archetype = "Goliath"
+  //     let player = new PlayerCreation(archetype);
+  //     player.inventory = ["glock", "two", "three", "four", "five"];
+  //     player.removeItem("glock");
+  //     expect(player.inventory).toEqual(["two", "three", "four", "five"]);
+  
+  //   });
