@@ -14,23 +14,18 @@ describe('playerCreation', () => {
     let name = "Alex";
     let archetype = "Goliath";
     let baseStats = [3, 5, 7, 3, 10];
-    let player = new PlayerCreation(name, archetype, baseStats);
+    let player = new PlayerCreation(name, archetype,);
     expect(player.playerName).toEqual(name);
     expect(player.archetype).toEqual(archetype);
     expect(player.baseStats).toEqual(baseStats);
   });
 
-//additional tests go here
-
-  // test('PlayerCharacter has an archetype child object with value of goliath', () => {
-  //   expect(player.archetype).toEqual('goliath');
-  // })
-
-  // test('PlayerCharacter has an archetype child object with stats and name', ()=> {
-  //   expect(player.archetype).toEqual('goliath');
-  //   expect(player.baseStats).toEqual([3,5,7,3,10])
-  // })
-
+  test('monster base stats are assigned based on their archetype choice', () => {
+    let archetype = "Goliath";
+    let player = new PlayerCreation(archetype);
+    player.assignBaseStats(archetype);
+    expect(player.baseStats).toEqual([3, 5, 7, 3, 10]);
+  });
 
 //reference:
 //lo 3, med 5, hi 7, exp, 10
