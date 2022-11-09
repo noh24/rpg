@@ -23,7 +23,11 @@ export class PlayerCreation {
   }
   
   addToInventory(item) {
-    this.inventory.push(item);
+    if (this.inventory.length >=5) {
+      return "too much stuff";
+    } else {
+      this.inventory.push(item);
+    }
   }
 }
 
