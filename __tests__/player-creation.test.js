@@ -52,6 +52,17 @@ describe('playerCreation', () => {
     expect(player2.baseStats).toEqual([0, 0, 0, 0, 0]);
   });
 
+  test('monster base stats are assigned based on their choice of "Brainiac"', () => {
+    let archetype = "Brainiac";
+    let archetype2 = "Human";
+    let player = new PlayerCreation(archetype);
+    let player2 = new PlayerCreation(archetype2);
+    player.assignBaseStats(archetype);
+    player2.assignBaseStats(archetype2);
+    expect(player.baseStats).toEqual([5, 5, 3, 7, 10]);
+    expect(player2.baseStats).toEqual([0, 0, 0, 0, 0]);
+  });
+
 
 //reference:
 //lo 3, med 5, hi 7, exp, 10
