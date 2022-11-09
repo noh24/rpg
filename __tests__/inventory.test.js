@@ -9,32 +9,8 @@ import { Weapon } from './../src/js/inventory';
       expect(glock.value).toEqual(1000);
       expect(glock.modifierProperty).toEqual("intimidation-factor");
       expect(glock.modifierValue).toEqual(2);
+     
     });
-
-
-  //   test('should add item to player\'s inventory ', () => {
-  //     player.addToInventory(item);
-  //     expect(player.inventory).toEqual(["glock", "chest-equipment"]);
-  //   });
-    
-  //   test('prevent adding to inventory that holds more than 5 items', () => {
-  //     let archetype = "Brainiac";
-  //     let item = "fail-item";
-  //     let player = new PlayerCreation(archetype);
-  //     player.inventory = ["glock", "two", "three", "four", "five"];
-  //     player.addToInventory(item);
-  //     expect(player.inventory).toEqual(["glock", "two", "three", "four", "five"]);
-  //     expect(player.addToInventory(item)).toEqual("too much stuff");
-  //   });
-  
-  //   test('will remove specified item from inventory', () => {
-  //     let archetype = "Goliath"
-  //     let player = new PlayerCreation(archetype);
-  //     player.inventory = ["glock", "two", "three", "four", "five"];
-  //     player.removeItem("glock");
-  //     expect(player.inventory).toEqual(["two", "three", "four", "five"]);
-  
-  //   });
   });
   //item types - consumables, weapons, armor, misc
 
