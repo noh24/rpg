@@ -5,6 +5,7 @@ export default class PlayerCreation {
     this.baseStats = [];
     this.inventory = [];
   }
+
   // baseStats [focus, dexterity, vitality, intelligence, intimidation factor]
   initializeCharacter(archetype) { 
     if (archetype === "Goliath") {
@@ -17,4 +18,18 @@ export default class PlayerCreation {
       this.baseStats = [5, 5, 3, 7, 10];
     } 
   }
+
+  addToInventory(item) {
+    if (this.inventory.length >= 5) {
+      return "too much stuff";
+    } else {
+      this.inventory.push(item);
+    }
+  }
+
+  // removeItem(item) {
+  //   let index = this.inventory.indexOf(item);
+  //   this.inventory.splice(index, 1);
+  // }
 }
+
