@@ -60,6 +60,17 @@ describe('playerCreation', () => {
     player.addToInventory(item);
     expect(player.inventory).toEqual(["glock", "chest-equipment"]);
   });
+  
+  test('prevent adding to inventory that holds more than 5 items', () => {
+    let archetype = "Brainiac";
+    let item = "fail-item";
+    let player = new PlayerCreation(archetype);
+    player.initializeCharacter(archetype);
+    player.inventory = ["glock", "two", "three", "four", "five"];
+    player.addToInventory(item);
+    expect(player.inventory).toEqual(["glock", "two", "three", "four", "five"]);
+    expect(player.addToInventory(item)).toEqual("too much stuff");
+  });
 
   
 });
