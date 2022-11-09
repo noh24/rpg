@@ -10,13 +10,14 @@ import { PlayerCreation } from './../src/js/player-creation';
 
 describe('playerCreation', () => {
 
-  test('call, create object with properties: name, archetype, basestats',  () => {
+  test('call, create object with properties: name, archetype, basestats, inventory',  () => {
     let name = "Alex";
     let archetype = "Goliath";
     let player = new PlayerCreation(name, archetype);
     expect(player.playerName).toEqual(name);
     expect(player.archetype).toEqual(archetype);
     expect(player.baseStats).toEqual([]);
+    expect(player.inventory).toEqual([]);
   });
 
   test('monster base stats are assigned based on their choice of "goliath"', () => {
