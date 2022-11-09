@@ -17,6 +17,8 @@ export class PlayerCreation {
       this.baseStats = [3, 5, 7, 3, 10];
     } else if (archetype === "Slasher") {
       this.baseStats = [7, 10, 5, 3, 3];
+    } else if (archetype === "Mystic") {
+      this.baseStats = [5, 3, 3, 10, 7];
     } else {
       this.baseStats = [0, 0, 0, 0, 0];
     }
