@@ -1,13 +1,5 @@
 import { PlayerCreation } from './../src/js/player-creation';
 
-// describe('whatever whatever', () => {
-  
-//   test('should correctly test for whatever you want', () => {
-//     let code = whatever();
-//     expect(whatever()).toEqual('whatever');
-//   });
-// });
-
 describe('playerCreation', () => {
 
   test('call, create object with properties: name, archetype, basestats, inventory',  () => {
@@ -65,13 +57,21 @@ describe('playerCreation', () => {
     let archetype = "Brainiac";
     let item = "fail-item";
     let player = new PlayerCreation(archetype);
-    player.initializeCharacter(archetype);
     player.inventory = ["glock", "two", "three", "four", "five"];
     player.addToInventory(item);
     expect(player.inventory).toEqual(["glock", "two", "three", "four", "five"]);
     expect(player.addToInventory(item)).toEqual("too much stuff");
   });
 
+  test('will remove specified item from inventory', () => {
+    let archetype = "Goliath"
+    let player = new PlayerCreation(archetype);
+    player.inventory = ["glock", "two", "three", "four", "five"];
+    player.removeItem("glock");
+    expect(player.inventory).toEqual(["two", "three", "four", "five"]);
+
   
+
+  })
 });
 
