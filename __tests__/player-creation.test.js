@@ -51,16 +51,25 @@ describe('playerCreation', () => {
   });     
   
   test('prevent adding to inventory that holds more than 5 items', () => {
-    let archetype = "Brainiac";
-    let player = new PlayerCreation(archetype);
-    let player2 = new PlayerCreation(archetype);
-    player.inventory = ["one", "two", "three", "four", ];
-    player2.inventory = ["one", "two", "three", "four", "five"]
-    let item = new Weapon('glock', 1000, "intimidation-factor", 2);
-    player.addToInventory(item);
-    expect(player.inventory).toEqual(["one", "two", "three", "four", item]);
-    expect(player2.addToInventory(item)).toEqual("too much stuff");
-  });
+      let archetype = "Brainiac";
+      let player = new PlayerCreation(archetype);
+      let player2 = new PlayerCreation(archetype);
+      player.inventory = ["one", "two", "three", "four", ];
+      player2.inventory = ["one", "two", "three", "four", "five"]
+      let item = new Weapon('glock', 1000, "intimidation-factor", 2);
+      player.addToInventory(item);
+      expect(player.inventory).toEqual(["one", "two", "three", "four", item]);
+      expect(player2.addToInventory(item)).toEqual("too much stuff");
+    });
+    // test('prevent adding to inventory that holds more than 5 items', () => {
+    //   let archetype = "Brainiac";
+    //   let player = new PlayerCreation(archetype);
+    //   player.inventory = ["one", "two", "three", "four", "five"];
+    //   let item = new Weapon('glock', 1000, "intimidation-factor", 2);
+    //   player.addToInventory(item);
+    //   expect(player.inventory).toEqual(["one", "two", "three", "four", "five"]);
+    //   expect(player.addToInventory(item)).toEqual("too much stuff");
+    // });
 }); 
   
   //   test('will remove specified item from inventory', () => {
